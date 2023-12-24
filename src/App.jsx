@@ -1,22 +1,15 @@
-import axios from "axios";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import { useEffect, useState } from "react";
+import LoginForm from "./components/loginForm/LoginForm";
+import Home from "./pages/Home";
 
 function App() {
-  const [data, setData] = useState({ username: "emredindr", password: "asd123" });
-
-  const signIn = async () => {
-    const response = await axios.post("https://localhost:7222/api/Auth/Login", data);
-    console.log(response);
-  };
-
-  useEffect(() => {
-    signIn();
-  }, []);
-
   return (
     <div className="container">
-      <h1>Application Management System</h1>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginForm />} />
+      </Routes>
     </div>
   );
 }
