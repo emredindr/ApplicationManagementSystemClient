@@ -89,6 +89,7 @@ const ApplicationList = ({ loading, setLoading }) => {
         pagination={{ pageSize: 6, position: ["bottomCenter"] }}
         rowKey={(record) => record.id}
         loading={loading}
+        scroll={{ x: 768 }}
       />
     </div>
   );

@@ -2,6 +2,7 @@ import { Menu } from "antd";
 import { HomeOutlined, CloudUploadOutlined, AreaChartOutlined, LoginOutlined, DashboardOutlined, OrderedListOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { useEffect } from "react";
 
 const MenuList = ({ darkTheme }) => {
   const { loggedIn } = useAuth();
@@ -48,6 +49,7 @@ const MenuList = ({ darkTheme }) => {
           text: "Application List",
         },
       ];
+
   return <Menu theme={darkTheme ? "dark" : "light"} mode="inline" defaultSelectedKeys={[window.location.pathname]} className="menu-bar" onClick={({ key }) => navigate(key)} items={menuItems}></Menu>;
 };
 

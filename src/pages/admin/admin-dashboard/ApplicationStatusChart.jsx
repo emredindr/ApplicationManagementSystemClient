@@ -5,7 +5,8 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const ApplicationStatusChart = ({ data }) => {
   const datas = {
-    labels: ["Pending", "Accepted", "Rejected"],
+    labels: [`Pending (${data.pending})`, `Accepted (${data.accepted})`, `Rejected (${data.rejected})`],
+
     datasets: [
       {
         data: [data.pending, data.accepted, data.rejected],
@@ -13,6 +14,11 @@ const ApplicationStatusChart = ({ data }) => {
         hoverBackgroundColor: ["#2980b9", "#45a049", "#c0392b"],
       },
     ],
+
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
   };
 
   return <Doughnut data={datas} />;
