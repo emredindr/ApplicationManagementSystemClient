@@ -1,17 +1,7 @@
-import { Routes, Route, Link } from "react-router-dom";
-import "./App.css";
-import LoginForm from "./components/loginForm/LoginForm";
-import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-  return (
-    <div className="container">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginForm />} />
-      </Routes>
-    </div>
-  );
+  return <Dashboard />;
 }
 
 export default App;
