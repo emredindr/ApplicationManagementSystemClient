@@ -11,7 +11,6 @@ const AdminDashboard = ({ loading, setLoading }) => {
     try {
       setLoading(true);
       const response = await getApplicationStatusRatio();
-      console.log(response);
       setApplicationStatusData(response.result);
     } catch (error) {
       console.log(error);
