@@ -16,7 +16,8 @@ export const getAllApplicationList = async () => {
 };
 
 export const getApplicationById = async (id) => {
-  const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/Application/GetApplicationById`, { params: { applicationId: id } });
+  // const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/Application/GetApplicationById`, { params: { applicationId: id } });
+  const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/Application/${id}`);
   return data;
 };
 
